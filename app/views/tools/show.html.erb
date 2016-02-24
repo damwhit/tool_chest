@@ -2,6 +2,9 @@
 <%= flash[:notice] %>
 <h1><%= @tool.name %> - <%= @tool.quantity %></h1>
 <h3><%= @tool.formatted_price %></h3>
+<% if @tool.category %>
+<h3> <%= @tool.category.name %> </h3>
+<% end %>
 <%= link_to "Destroy #{@tool.name}", tool_path(@tool.id), method: "delete" %>
 <%= link_to "Update #{@tool.name}", edit_tool_path(@tool.id) %>
 <%= link_to("my tools", tools_path) %>
